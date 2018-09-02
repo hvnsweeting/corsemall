@@ -10,7 +10,7 @@ requisites = ['flask>=1.0.0']
 
 setup(
     name='corsemall',
-    version='0.1.0',
+    version='0.2.0',
     description='Serves JSON data with CORS allowed from *.json files at given path.',
     long_description=open('README.rst').read(),
     author='Viet Hung Nguyen',

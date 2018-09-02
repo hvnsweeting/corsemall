@@ -24,7 +24,8 @@ INDEX = '''<html><head><title>CORS all</title></head>
 @app.route('/')
 def index():
     path = os.path.abspath(os.environ.get('CORSALL_PATH', '.'))
-    files = [fn for fn in os.listdir(path) if fn.endswith('.json')]
+    files = [fn.replace('.json', '')
+             for fn in os.listdir(path) if fn.endswith('.json')]
 
     return render_template_string(INDEX, path=path, files=files)
 
@@ -32,7 +33,7 @@ def index():
 @app.route('/<string:page>')
 def return_with_cors_enabled(page):
     base_path = os.path.abspath(os.environ.get('CORSALL_PATH', '.'))
-    page_path = os.path.join(base_path, page)
+    page_path = os.path.join(base_path, page + '.json')
     with open(page_path) as f:
         data = json.load(f)
         response = jsonify(data)
