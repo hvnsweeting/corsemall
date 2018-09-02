@@ -6,7 +6,7 @@ corsemall - CORS 'em all
 .. image:: https://travis-ci.org/hvnsweeting/corsemall.svg?branch=master
     :target: https://travis-ci.org/hvnsweeting/corsemall
 
-For developing JavaScript application, which get data from backend. There are
+For developing JavaScript applications, which get data from backend. There are
 circustances that backend not available, or on a remote has not allow CORS
 (yet), or the network is just too slow.
 This helps bypass these problems by saving the data once to local '.json' files
